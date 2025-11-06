@@ -35,7 +35,6 @@ class Zombie:
         self.dir = random.choice([-1,1])
         self.size = 200
 
-
     def get_bb(self):
         return self.x - self.size // 2, self.y - self.size // 2, self.x + self.size // 2, self.y + self.size // 2
 
