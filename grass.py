@@ -1,5 +1,8 @@
 from pico2d import *
 
+import game_world
+
+
 class Grass:
     def __init__(self):
         self.image = load_image('grass.png')
@@ -17,4 +20,5 @@ class Grass:
 
     def handle_collision(self, group, other):
         if group == 'grass:ball':
-            pass
+            game_world.remove_collision_pairs(other)
+            game_world.add_collision_pair('boy:ball', None, other)
