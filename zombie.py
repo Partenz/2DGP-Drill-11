@@ -42,6 +42,10 @@ class Zombie:
     def handle_collision(self, group, other):
         if group == 'boy:zombie':
             pass
+        if group == 'zombie:ball':
+            if self.size == 200:
+                self.size = 100
+                self.y = 100
 
     def update(self):
         self.frame = (self.frame + FRAMES_PER_ACTION * ACTION_PER_TIME * game_framework.frame_time) % FRAMES_PER_ACTION
